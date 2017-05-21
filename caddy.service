@@ -6,7 +6,7 @@ Restart=on-failure
 User=caddy
 Group=caddy
 Environment=HOME=/etc/ssl/caddy
-ExecStart=/usr/bin/caddy -log stdout -agree=true -conf=/etc/caddy/Caddyfile -root=/var/tmp -http2=false
+ExecStart=/usr/bin/caddy -log stdout -email dave@natulte.net -agree=true -conf=/etc/caddy/Caddyfile -root=/var/tmp -http2=false
 ExecReload=/bin/kill -USR1 $MAINPID
 LimitNOFILE=1048576
 LimitNPROC=64
