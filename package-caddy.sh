@@ -4,9 +4,6 @@ set -euxo pipefail
 
 wget -O- https://caddyserver.com/download/linux/amd64?plugins=http.prometheus,http.proxyprotocol | tar -zxvf- caddy
 fpm -s dir -t deb -n caddy -v $(date '+%Y%m%d%H%M%S') \
-    --directories=/etc/caddy \
-    --directories=/etc/caddy/sites.d \
-    --directories=/etc/ssl/caddy \
     --deb-systemd=./caddy.service \
     --deb-systemd-restart-after-upgrade \
     --after-install=./create-caddy-user.sh \
